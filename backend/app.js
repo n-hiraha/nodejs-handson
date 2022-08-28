@@ -34,7 +34,6 @@ app.get("/", (req, res) => {
 
 //  追加
 app.post("/todo/add", (req, res) => {
-  console.log(req.body, "body");
   const todo = req.body;
   try {
     pool.query(

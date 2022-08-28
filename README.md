@@ -1,17 +1,17 @@
+## 環境
+
+- backend Node.js (Express)
+- database MySQL
+
 ## 起動方法
 
-### Node のインストール
-
-### Node.js の起動
+### パッケージのインストール
 
 ```
-cd backend
 npm install
-
-npm run start
 ```
 
-### MySQL の起動
+### Node.js と MySQL の起動
 
 プロジェクトのルートで
 

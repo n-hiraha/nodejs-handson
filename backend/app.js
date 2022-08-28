@@ -15,7 +15,7 @@ const pool = mysql.createConnection({
   database: "node",
 });
 
-//  一覧
+//  一覧取得
 app.get("/", (req, res) => {
   let data;
   try {
@@ -50,17 +50,17 @@ app.post("/todo/add", (req, res) => {
   }
 });
 
-// 課題①
+// 課題① 取得
 app.get("/todo/:id", (req, res) => {
   return res.json({});
 });
 
-// 課題②
+// 課題② 編集
 app.put("/todo/:id", (req, res) => {
   return res.json({ status: true });
 });
 
-// 課題③
+// 課題③ 削除
 app.delete("/todo/:id", (req, res) => {
   return res.json({ status: true });
 });

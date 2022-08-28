@@ -6,8 +6,8 @@ const addTodo = document.querySelector(".add");
 addTodo.addEventListener("submit", async (e) => {
   e.preventDefault();
   const values = {
-    name: addTask.name.value.trim(),
-    description: addTask.description.value.trim(),
+    name: addTodo.name.value.trim(),
+    description: addTodo.description.value.trim(),
   };
   const data = await CreateTodo(values);
 

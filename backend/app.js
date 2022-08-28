@@ -8,7 +8,7 @@ app.use(express.json());
 const mysql = require("mysql2");
 
 const pool = mysql.createConnection({
-  host: "localhost",
+  host: "node-mysql",
   user: "root",
   password: "password",
   port: 3306,

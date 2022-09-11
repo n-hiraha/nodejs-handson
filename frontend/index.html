@@ -6,18 +6,43 @@
     <title>Todo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
+
   <body>
-    <form action="" class="add">
-      <div>
-        <label>タスクの名前</label>
-        <input type="text" name="name" placeholder="XXXXX" />
-      </div>
-      <div>
-        <label>タスクの説明</label>
-        <input type="text" name="description" placeholder="XXXXX" />
-      </div>
-      <button type="submit">送信</button>
-    </form>
+    <div>
+      <h3>新規作成用</h3>
+      <form action="" class="add">
+        <div>
+          <label>タスクの名前</label>
+          <input type="text" name="name" placeholder="XXXXX" />
+        </div>
+        <div>
+          <label>タスクの説明</label>
+          <input type="text" name="description" placeholder="XXXXX" />
+        </div>
+        <button type="submit">送信</button>
+      </form>
+    </div>
+
+    <div>
+      <h3>編集用</h3>
+      <form class="edit">
+        <div>
+          <label>タスクのID</label>
+          <input name="id" type="text" />
+        </div>
+
+        <div>
+          <label>タスクの名前</label>
+          <input name="name" type="text" />
+        </div>
+
+        <div>
+          <label>タスクの説明</label>
+          <input name="description" type="text" />
+        </div>
+        <button type="submit">送信</button>
+      </form>
+    </div>
 
     <ul class="todos"></ul>
 

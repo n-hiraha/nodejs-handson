@@ -35,9 +35,11 @@ app.get("/", (req, res) => {
 //  追加
 app.post("/todo/add", (req, res) => {
   const todo = req.body;
+  console.log(todo, "__body");
+
   try {
     pool.query(
-      "INSERT INTO todos (id, name, description) values(null, ?, ?)",
+      "INSERT INTO todos (id, name, description) VALUES(null, ?, ?)",
       [todo.name, todo.description],
       (error, results, fields) => {
         if (error) throw error;
@@ -55,13 +57,41 @@ app.get("/todo/:id", (req, res) => {
 });
 
 // 課題② 編集
-app.put("/todo/:id", (req, res) => {
-  return res.json({ status: true });
+app.put("/todo", (req, res) => {
+  const todo = req.body;
+  console.log(todo, "__body");
+
+  try {
+    pool.query(
+      "UPDATE todos SET name = ?, description = ? WHERE id = ?",
+      [todo.name, todo.description, todo.id],
+      (error, results, fields) => {
+        if (error) throw error;
+      }
+    );
+    return res.json({ status: true });
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 // 課題③ 削除
-app.delete("/todo/:id", (req, res) => {
-  return res.json({ status: true });
+app.delete("/todo", (req, res) => {
+  console.log(req.query, "__query");
+  const todoId = req.query.id;
+
+  try {
+    pool.query(
+      "DELETE FROM todos WHERE id = ?",
+      [todoId],
+      (error, results, fields) => {
+        if (error) throw error;
+      }
+    );
+    return res.json({ status: true });
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 //  サーバー起動
